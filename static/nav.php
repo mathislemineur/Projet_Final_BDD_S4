@@ -14,6 +14,7 @@ if (isset($_SESSION['id_dresseur']) && !empty($_SESSION['id_dresseur'])) { // qu
 
     echo '<li><a href="index.php">Home</a></li>';
     echo '<li><a href="connection.php">Connexion</a></li>';
+    echo '<li><a href="inscription.php">Inscription</a></li>';
 
 }
 

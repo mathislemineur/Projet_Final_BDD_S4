@@ -21,7 +21,7 @@ $flux = connectionDB();
 		
         <meta charset="utf-8">
 		
-        <title>Connection</title>
+        <title>Inscription</title>
 		
         <link rel="icon" type="image/jpg" href="../images/bouboule.jpg">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -63,33 +63,38 @@ $flux = connectionDB();
             ?>
 
         </section>
+        <br>
+        <br>
         <section>
 
-            <!-- formulaire de co -->
+            <h3 class='latin-bc'>Rejoignez nous ! </h3>
+        </section>
+            <br>
+        <section>
+            <!-- formulaire d'inscription -->
             <!-- POST pour pas que ca se voit dans le lein -->
-            <form action="php/login.php" method="POST">
+            <form action="php/inscription.php" method="POST">
 
                 <!-- classes Bootstrap : ca fonctionne tout seul tkt  -->
                 <div class="mb-3">
 
                     <!-- phrase au dessus de la zone a remplir -->
-                    <label for="login" class="form-label">Identifiant (Login) :</label>
-
-                    <!-- zone a remplir pour login | le required rend le formulaire non envoyable si c'est pas rempli -->
-                    <input type="text" name="login" id="login" class="form-control" required>
+                    <label for="reg_login" class="form-label">Choisir un pseudo :</label>
+                    
+                    <!-- zone a remplir pour le mdp | le required rend le formulaire non envoyable si c'est pas rempli -->
+                    <input type="text" name="login" id="reg_login" class="form-control" required>
                 </div>
-                
                 <div class="mb-3">
 
                     <!-- phrase au dessus de la zone a remplir -->
-                    <label for="password" class="form-label">Mot de passe :</label>
-
+                    <label for="reg_password" class="form-label">Choisir un mot de passe :</label>
+                    
                     <!-- zone a remplir pour le mdp | le required rend le formulaire non envoyable si c'est pas rempli -->
-                    <input type="password" name="password" id="password" class="form-control" required>
+                    <input type="password" name="password" id="reg_password" class="form-control" required>
                 </div>
-                
-                <!-- bouton pour envoyer le formulaire | le  primary donne la couleur bleu -->
-                <button type="submit" class="btn btn-primary"> Shazammmmm </button>
+    
+                <!-- bouton pour envoyer le formulaire | le  success donne la couleur verte -->
+                <button type="submit" class="btn btn-success">Créer mon compte</button>
             </form>
 
         </section>
