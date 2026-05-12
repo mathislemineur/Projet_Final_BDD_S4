@@ -252,7 +252,6 @@ function getPoke($mysqli) {
 // recup toutes les infos du user pour le profil
 function getInfoUser($mysqli) {
 
-    // on prend l'id et le nom chez pokemon
     $sql = "SELECT id_user, username, nom, prenom, mail, date_naissance, date_de_creation, date_derniere_connexion
             FROM user;";
 
@@ -263,11 +262,23 @@ function getInfoUser($mysqli) {
     return $res;
 }
 
-// recup tous les articles
+// recup tous les infos pour les articles mis sur l'index
 function getArticles($mysqli) {
 
-    // on prend l'id et le nom chez pokemon
     $sql = "SELECT id_article, titre, date_de_creation, jeu.nom AS nom_jeu
+            FROM article
+            JOIN jeu ON article.id_jeu = jeu.id_jeu;";
+
+    // tableau associatif
+    $res = readDB($mysqli, $sql);
+
+    // on retourne le tableau associatif
+    return $res;
+}
+
+function getInfoArticles($mysqli) {
+
+    $sql = "SELECT id_article, titre, contenu, note, date_de_creation, id_jeu, jeu.nom AS nom_jeu, date_de_modification, id_user
             FROM article
             JOIN jeu ON article.id_jeu = jeu.id_jeu;";
 
