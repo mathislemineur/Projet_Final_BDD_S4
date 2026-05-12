@@ -17,7 +17,7 @@ $flux = connectionDB();
 <html lang="fr">
     <head>
 		<meta name="keywords" content="esir,CUPGE,rennes">
-		<meta name="author" content="Mathis_Le_Mineur">
+		<meta name="author" content="Mathis_Le_Mineur, Keyvan_Dahlem">
 		
         <meta charset="utf-8">
 		

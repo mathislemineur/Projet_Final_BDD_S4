@@ -546,8 +546,14 @@ function displayArticles($mysqli, $bdd) {
         // balise pour le css des cartes pour chaque article
         $res = $res . '<div class="carte-article-avec-image">';
 
-        // + le nom
-        $res = $res . '<h3 class="nom">' . $articles['titre'] . '</h3>';
+        // + le nom du jeu
+        $res = $res . '<p class="nom-jeu">' . $articles['nom_jeu'] . '</p>';
+
+        // + le titre
+        $res = $res . '<h3 class="titre">' . $articles['titre'] . '</h3>';
+
+        // + la date de création
+        $res = $res . '<p class="date"> Date de création : ' . $articles['date_de_creation'] . '</p>';
 
         // balise fermant le div des cartes
         $res = $res . '</div>';

@@ -267,8 +267,9 @@ function getInfoUser($mysqli) {
 function getArticles($mysqli) {
 
     // on prend l'id et le nom chez pokemon
-    $sql = "SELECT id_article, titre
-            FROM article;";
+    $sql = "SELECT id_article, titre, date_de_creation, jeu.nom AS nom_jeu
+            FROM article
+            JOIN jeu ON article.id_jeu = jeu.id_jeu;";
 
     // tableau associatif
     $res = readDB($mysqli, $sql);
