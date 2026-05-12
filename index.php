@@ -44,7 +44,7 @@ $flux = connectionDB();
 
 			echo "<br>";
 
-			echo "<h1 class='latin-bc'> 1 G : Kanto </h1>";
+			echo "<h1 class='latin-bc'> 1 G : forum </h1>";
 
 			echo "</section>";
 
@@ -75,7 +75,7 @@ $flux = connectionDB();
 
 			echo "<br>";
 
-			echo "<h1 class='latin-bc'> 1 G : Kanto </h1>";
+			echo "<h1 class='latin-bc'> 1 G : forum </h1>";
 
 			$aff_pokedex = displayPokedex($flux,getPokedex($flux)); 
 
