@@ -532,6 +532,32 @@ function displaySelectionPoke($pokedex) {
     echo '</select>';
 }
 
+// partie projet
 
+// tous les articles des redacteurs
+function displayArticles($mysqli, $bdd) {
+
+    // balise pour le css
+    $res = '<div class="grille-pokedex">';
+
+    // parcourt du tableau contenant les pokemons
+    foreach ($bdd as $articles) {
+        
+        // balise pour le css des cartes pour chaque article
+        $res = $res . '<div class="carte-article-avec-image">';
+
+        // + le nom
+        $res = $res . '<h3 class="nom">' . $articles['titre'] . '</h3>';
+
+        // balise fermant le div des cartes
+        $res = $res . '</div>';
+    }
+
+    // balise fermant le div de la grille
+    $res = $res . '</div>';
+
+    // comme le print en python
+    echo $res;
+}
 
 ?>

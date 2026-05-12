@@ -76,7 +76,7 @@ $flux = connectionDB();
 
 			echo "<h1 class='latin-bc'> 1 G : forum </h1>";
 
-			$aff_pokedex = displayPokedex($flux,getPokedex($flux)); 
+			$aff_pokedex = displayArticles($flux,getArticles($flux)); 
 
 		}
 
