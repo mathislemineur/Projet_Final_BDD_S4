@@ -1,0 +1,401 @@
+/* partie du header */
+
+header{
+	display: flex;
+	align-items: center;
+	background-color: rgb(0, 0, 0);
+	justify-content: space-around;
+}
+
+header img{
+	width: 5%;
+    height: 5%;
+    display: block;
+}
+
+header h1{
+	font-family: cursive;
+	text-shadow: rgb(255,0,0) 100px 30px;
+}
+
+/* partie du menu de navigation */
+
+nav {
+	background-color: rgb(0,0,0);
+	padding: 0px;
+	position: sticky; 
+	top: 0;
+	z-index: 1000;
+}
+
+nav ul {
+	justify-content: space-around;
+	list-style-type: none;
+	display: flex;
+	margin: 0px;
+	padding: 0px;
+}
+
+nav li a {
+	display: block;
+	color: white;
+	padding: 20px 30px;
+	text-decoration: none;
+	font-variant: small-caps;
+	line-height: 1;
+}
+
+nav ul li p {
+    display: block;
+    color: white;
+    padding: 20px 30px;
+    margin: 0;
+    font-variant: small-caps;
+    line-height: 1;
+}
+
+nav li a:hover {
+	background-color: rgb(45,45,45);
+}
+
+/* partie du body */
+
+body {
+    background-image: url("../images/bcb2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0px;
+}
+
+/* partie des paragraphes */
+
+.latin{
+    border: 1px black solid;
+    border-radius: 5px;
+	width: 450px;
+    background-color: #ffffff;
+    text-align: justify;
+    padding: 16px;
+    margin: 0px;
+}
+
+.latin-bc{
+    border: 1px black solid;
+    border-radius: 5px;
+    background-color: #ffffff;
+    text-align: justify;
+    padding: 16px;
+    margin: 0px;
+}
+
+/* partie du footer */
+
+footer {
+    background-color: rgb(45, 45, 45);
+    color: white;
+    width: 100%;
+    margin: 50px 0 0 0;
+    padding: 40px 0 20px 0;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fc {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 0 50px; 
+    box-sizing: border-box;
+}
+
+.fb {
+    flex: 1;
+    text-align: center;
+}
+
+.fb h3 {
+    color: #ff3333;
+    margin-bottom: 15px;
+}
+
+
+.fb ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fb a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.fb a:hover {
+    color: white;
+}
+
+.copyco {
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+/* partie pokedex */
+
+/* grille */
+.grille-pokedex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* carte normale */
+.carte-pokemon {
+    border: 1px solid #000000;
+    border-radius: 8px;
+
+    padding: 10px;
+    width: 180px;
+    height: auto;
+    
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+
+}
+
+.carte-pokemon:hover {
+    transform: translateY(-5px);    /* fait monter la case */
+}
+
+.carte-pokemon img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Nom du poke */
+.carte-pokemon .nom {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 5px 0 2px 0;
+}
+
+/* Num du poke */
+.carte-pokemon .num {
+    color: #fcb900;
+    margin: 0 0 5px 0;
+}
+
+/* carte pokemon attrape */
+.carte-pokemon-attrape {
+    border: 1px solid #00ff0d;
+    border-radius: 8px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.carte-pokemon-attrape:hover {
+    transform: translateY(-5px);    /* fait monter la case */
+}
+
+.carte-pokemon-attrape .img-pokemon {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.carte-pokemon-attrape .duo-captures-pokeball {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carte-pokemon-attrape .img-pokeball {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Nom du poke */
+.carte-pokemon-attrape .nom {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Num du poke */
+.carte-pokemon-attrape .num {
+    color: #fcb900;
+    margin: 0;
+}
+
+/* carte pas attrape */
+.carte-pokemon-pa {
+    border: 1px solid #ff0000;
+    border-radius: 8px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.carte-pokemon-pa img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 30px;
+    filter: brightness(0);
+}
+
+/* Nom du poke */
+.carte-pokemon-pa .nom {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Num du poke */
+.carte-pokemon-pa .num {
+    color: #fcb900;
+}
+
+.carte-type {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.carte-type img {
+    width: 120px;
+    object-fit: contain;
+    margin-bottom: 1px;
+}
+
+.carte-capa {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.carte-capa img {
+    width: 120px;
+    object-fit: contain;
+    margin-bottom: 1px;
+}
+
+section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+.info-case {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.info-types {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-type {
+    padding: 5px;
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+.carte-pokemon-avec-image {
+    border: 1px solid #000000;
+    border-radius: 8px;
+
+    padding: 10px;
+    width: 180px;
+    height: auto;
+    
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+
+}
+
+.carte-pokemon-avec-image:hover {
+    transform: translateY(-5px);    /* fait monter la case */
+}
+
+.carte-pokemon-avec-image img {
+    object-fit: contain;
+    margin-bottom: 0px;
+}
+
+/* Nom du poke */
+.carte-pokemon-avec-image .nom {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 4px 0 0 0;
+}
+
+/* Num du poke */
+.carte-pokemon-avec-image .num {
+    color: #fcb900;
+    margin: 0 0 4px 0;
+}
+
+.img-type-carte {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: auto;
+    padding: 4px;
+}
+
+.info-type-carte {
+    display: block;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.img-pokemon-carte {
+    display: flex;
+    margin: 0 auto;
+    height: 120px;
+    width: 120px;
+}
