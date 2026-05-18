@@ -58,7 +58,7 @@ if (isset($id_article) == false || $id_article == "") {
 
         // affichage des avis de cet article
 
-        $liste_avis = getListeAvis($flux, $id_article);
+        $liste_avis = getListeAvisArticle($flux, $id_article);
 
         if (!empty($liste_avis)) {
             foreach ($liste_avis as $avis) {

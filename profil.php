@@ -13,10 +13,10 @@ require_once("./php/functions_structure.php");			//fonctions pour structurer l'a
 $flux = connectionDB();
 
 // on recup l'id du pokemon dans le lien
-$id_article = $_GET['id'];
+$id_user = $_GET['id'];
 
-// si ca exuste pas demi tour ou si c'est vide demi tour
-if (isset($id_article) == false || $id_article == "") {
+// si ca existe pas demi tour ou si c'est vide demi tour
+if (isset($id_user) == false || $id_user == "") {
     header('Location: index.php');
     exit(); 
 }
@@ -31,12 +31,7 @@ if (isset($id_article) == false || $id_article == "") {
 		
         <meta charset="utf-8">
 
-        <?php
-        // on recup le titre et l'id de l'article pour le mettre dans le titre de la page
-        $titre_article = getArticles($flux, $id_article)[0]['titre'];
-        $id_article = getArticles($flux, $id_article)[0]['id_article'];
-        echo "<title>" . $titre_article . "</title>";
-        ?>
+        <title> Profil </title>
 		
         <link rel="icon" type="image/jpg" href="images/bouboule.jpg">
 		<link href="styles/all.css?v=1.1" rel="stylesheet">
@@ -46,31 +41,35 @@ if (isset($id_article) == false || $id_article == "") {
 	
 		<?php include("static/header.php"); ?>
         <?php include("static/nav.php"); ?>
-        <?php include("static/nav_dex.php"); ?>
 
         <section>
 
         <?php
 
-        // affichage de l'article
-	
-		displayArticlesInfos(getInfosArticles($flux, $id_article));
+        // infos du user
+        displayInfosUser(getInfoUser($flux, $id_user));
+        
+        // balise pour le css 
+        echo '<div class="user-avis">';
 
-        // affichage des avis de cet article
+        // nb d'avis
+        $nb_avis = count(getListeAvisUser($flux, $id_user));
+        echo "<p> Nombre d'avis : " . $nb_avis . "</p>";
 
-        $liste_avis = getListeAvis($flux, $id_article);
+        // avis ecrits
+        $liste_avis = getListeAvisUser($flux, $id_user);
 
         if (!empty($liste_avis)) {
             foreach ($liste_avis as $avis) {
 
-                
-
-                displayInfosAvis(getInfosAvis($flux, $avis['id_avis']));
-                //$test = getInfosAvis($flux, $avis['id_avis']);
-
-                
+                displayInfosAvis(getInfosAvis($flux, $avis['id_avis']));                
             }
         }
+
+        // balise fermant le div du debut
+        echo '</div>';
+
+        // nb d'articles si redacteur ou admin
 
         ?>
         

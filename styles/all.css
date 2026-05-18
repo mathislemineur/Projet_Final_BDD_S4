@@ -423,3 +423,11 @@ form {
 .avis-infos {
     background-color: white;
 }
+
+.user-infos {
+    background-color: white;
+}
+
+.user-avis {
+    background-color: blue;
+}

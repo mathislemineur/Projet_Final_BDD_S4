@@ -7,7 +7,7 @@ if (isset($_SESSION['id_dresseur']) && !empty($_SESSION['id_dresseur'])) { // qu
 
     echo "<li><p>Bienvenue " . $_SESSION['login'] . "</p></li>";
     echo '<li><a href="index.php">Home</a></li>';
-    echo '<li><a href="modif_dex.php">Modifier</a></li>';
+    echo '<li><a href="profil.php">Profil</a></li>';
     echo '<li><a href="php/logout.php">Déconnexion</a></li>';
 
 } else { // personne n'est co

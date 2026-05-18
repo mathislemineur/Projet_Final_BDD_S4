@@ -37,48 +37,11 @@ $flux = connectionDB();
 
 	<?php
 
-		if (isset($_SESSION['id_dresseur'])) {
-
-			echo "<section>";
-
 			echo "<br>";
 
-			echo "<h1 class='latin-bc'> 1 G : forum </h1>";
-
-			echo "</section>";
-
-			echo "<section>";
-
-			echo "<br>";
-
-			echo "<h2 class='latin-bc'> Votre pokedex personnel : </h2>";
-
-			echo "<br>";
-
-			echo "</section>";
-
-			$nb_vues = NombreVues($flux, $_SESSION['id_dresseur']);
-			$nb_attrapes = NombreCaptures($flux, $_SESSION['id_dresseur']);
-			
-			echo "<section>";
-			echo "<div class='alert alert-info'>";
-			echo "Parmi les pokemon du pokedex de la  1G, vous en avez vus " . $nb_vues . " et attrapé " . $nb_attrapes ." différents . " ;
-			echo "</div>";
-			echo "</section>";
-
-			$cap = getCaptures($flux, $_SESSION['id_dresseur']);
-
-			displayPokedexPersonnel($flux, getPokedex($flux), $cap);
-
-		} else {
-
-			echo "<br>";
-
-			echo "<h1 class='latin-bc'> 1 G : forum </h1>";
+			echo "<h1 class='latin-bc'> Bienvenue sur le forum ! </h1>";
 
 			$aff_pokedex = displayArticles($flux,getArticles($flux)); 
-
-		}
 
 	?>
 

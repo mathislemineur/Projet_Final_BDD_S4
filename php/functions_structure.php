@@ -601,7 +601,7 @@ function displayArticlesInfos($bdd) {
     $res = $res . '<p> Note du redacteur : ' . $infos['note'] . '</p>';
 
     // + la note moyenne
-    
+
     // + le pseudo du redacteur
     $res = $res . '<p> Rédacteur : ' . $infos['pseudo_redacteur'] . '</p>';
 
@@ -651,6 +651,49 @@ function displayInfosAvis($bdd) {
     // date de creation
     $res = $res . '<p> ' . $avis['date_de_creation'] . '</p>';
 
+    // balise fermant le div du debut
+    $res = $res . '</div>';
+
+    // comme le print en python
+    echo $res;
+}
+
+function displayInfosUser($bdd) {
+
+    // parcourt du tableau contenant les pokemons
+    $infos = $bdd[0];
+
+    // balise pour le css 
+    $res = $res . '<div class="user-infos">';
+      
+    // + le pseudo
+    $res = $res . '<p> Bienvenue ' . $infos['username'] . '</p>';
+
+    // + le nom
+    $res = $res . '<p> Nom : ' . $infos['nom'] . '</p>';
+    
+    // + le prenom
+    $res = $res . '<p> Prénom : ' . $infos['prenom'] . '</p>';
+    
+    // + le mail
+    $res = $res . '<p> Mail : ' . $infos['mail'] . '</p>';
+    
+    // + la date de naissance
+    $res = $res . '<p> Date de naissance : ' . $infos['date_de_naissance'] . '</p>';
+    
+    // + l'age
+
+    // + la photo de profil
+
+    // date de creation
+    $res = $res . '<p> Date de création du compte : ' . $infos['date_de_creation'] . '</p>';
+    
+    // date de derniere connexion
+    $res = $res . '<p> Date de dernière connexion : ' . $infos['date_derniere_connexion'] . '</p>';
+
+    // + le role
+    $res = $res . '<p> Rôle : ' . $infos['role'] . '</p>';
+    
     // balise fermant le div du debut
     $res = $res . '</div>';
 

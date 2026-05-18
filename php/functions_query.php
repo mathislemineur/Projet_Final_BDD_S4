@@ -250,10 +250,11 @@ function getPoke($mysqli) {
 // partie projet
 
 // recup toutes les infos du user pour le profil
-function getInfoUser($mysqli) {
+function getInfoUser($mysqli, $id_user) {
 
-    $sql = "SELECT id_user, username, nom, prenom, mail, date_naissance, date_de_creation, date_derniere_connexion
-            FROM user;";
+    $sql = "SELECT id_user, username, nom, prenom, mail, date_de_naissance, date_de_creation, date_derniere_connexion, role
+            FROM user
+            WHERE id_user = " .$id_user . ";";
 
     // tableau associatif
     $res = readDB($mysqli, $sql);
@@ -291,12 +292,26 @@ function getInfosArticles($mysqli, $id_article) {
     return $res;
 }
 
-function getListeAvis($mysqli, $id_article) {
+function getListeAvisArticle($mysqli, $id_article) {
 
     $sql = "SELECT id_avis
             FROM avis 
             JOIN article ON avis.id_article = article.id_article
             WHERE article.id_article = " .$id_article . ";";
+
+    // tableau associatif
+    $res = readDB($mysqli, $sql);
+
+    // on retourne le tableau associatif
+    return $res;
+}
+
+function getListeAvisUser($mysqli, $id_user) {
+
+    $sql = "SELECT id_avis
+            FROM avis 
+            JOIN user ON avis.id_user = user.id_user
+            WHERE user.id_user = " .$id_user . ";";
 
     // tableau associatif
     $res = readDB($mysqli, $sql);
