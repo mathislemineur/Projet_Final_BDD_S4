@@ -572,4 +572,89 @@ function displayArticles($mysqli, $bdd) {
     echo $res;
 }
 
+function displayArticlesInfos($bdd) {
+
+    // parcourt du tableau contenant les pokemons
+    $infos = $bdd[0];
+        
+    // balise pour le css 
+    $res = $res . '<div class="article-infos">';
+      
+    // + le titre
+    $res = $res . '<h3 class="article-titre">' . $infos['titre'] . '</h3>';
+
+    // + nom du jeu
+    $res = $res . '<p class="jeu-nom">' . $infos['nom_du_jeu'] . '</p>';
+
+    // + le contenu (critique du redacteur)
+    $res = $res . '<p> ' . $infos['contenu'] . '</p>';
+
+    // + le prix
+
+    // + le synopsis
+
+    // + le support
+
+    // + categorie
+
+    // + la note
+    $res = $res . '<p> Note du redacteur : ' . $infos['note'] . '</p>';
+
+    // + la note moyenne
+    
+    // + le pseudo du redacteur
+    $res = $res . '<p> Rédacteur : ' . $infos['pseudo_redacteur'] . '</p>';
+
+    // basilse css pour les deux dates
+    $res = $res . '<div class="article-date">';
+
+    // les deux dates
+    // date de creation
+    $res = $res . '<p> Date de création : ' . $infos['date_de_creation'] . '</p>';
+    
+    // date de modif
+    $res = $res . '<p> Date de modification : ' . $infos['date_de_modification'] . '</p>';
+
+    // balise fermant le div des dates
+    $res = $res . '</div>';
+
+    // balise fermant le div du debut
+    $res = $res . '</div>';
+
+    // comme le print en python
+    echo $res;
+}
+
+function displayInfosAvis($bdd) {
+
+    // parcourt du tableau contenant les pokemons
+    $avis = $bdd[0];
+
+    // balise pour le css 
+    $res = $res . '<div class="avis-infos">';
+      
+    // + le titre
+    $res = $res . '<h3 class="article-titre">' . $avis['titre'] . '</h3>';
+
+    // + nom du jeu
+    $res = $res . '<p class="jeu-nom">' . $avis['nom_jeu'] . '</p>';
+
+    // + le contenu
+    $res = $res . '<p> ' . $avis['contenu'] . '</p>';
+
+    // + la note
+    $res = $res . '<p> Note : ' . $avis['note'] . '</p>';
+
+    // + le pseudo du redacteur
+    $res = $res . '<p> Avis de : ' . $avis['pseudo'] . '</p>';
+
+    // date de creation
+    $res = $res . '<p> ' . $avis['date_de_creation'] . '</p>';
+
+    // balise fermant le div du debut
+    $res = $res . '</div>';
+
+    // comme le print en python
+    echo $res;
+}
 ?>

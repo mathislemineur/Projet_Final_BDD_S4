@@ -276,11 +276,41 @@ function getArticles($mysqli) {
     return $res;
 }
 
-function getInfoArticles($mysqli) {
+function getInfosArticles($mysqli, $id_article) {
 
-    $sql = "SELECT id_article, titre, contenu, note, date_de_creation, id_jeu, jeu.nom AS nom_jeu, date_de_modification, id_user
-            FROM article
-            JOIN jeu ON article.id_jeu = jeu.id_jeu;";
+    $sql = "SELECT titre, contenu, note, article.date_de_creation AS date_de_creation, date_de_modification, article.id_user AS iduser, jeu.nom AS nom_du_jeu, user.username AS pseudo_redacteur, jeu.prix AS prix
+            FROM article 
+            JOIN jeu ON jeu.id_jeu = article.id_jeu 
+            JOIN user ON article.id_user = user.id_user
+            WHERE id_article = " .$id_article . ";";
+
+    // tableau associatif
+    $res = readDB($mysqli, $sql);
+
+    // on retourne le tableau associatif
+    return $res;
+}
+
+function getListeAvis($mysqli, $id_article) {
+
+    $sql = "SELECT id_avis
+            FROM avis 
+            JOIN article ON avis.id_article = article.id_article
+            WHERE article.id_article = " .$id_article . ";";
+
+    // tableau associatif
+    $res = readDB($mysqli, $sql);
+
+    // on retourne le tableau associatif
+    return $res;
+}
+
+function getInfosAvis($mysqli, $id_avis) {
+
+    $sql = "SELECT id_avis, titre, note, avis.date_de_creation AS date_de_creation, contenu, user.username AS pseudo
+            FROM avis
+            JOIN user ON avis.id_user = user.id_user
+            WHERE id_avis = " .$id_avis . ";";
 
     // tableau associatif
     $res = readDB($mysqli, $sql);
