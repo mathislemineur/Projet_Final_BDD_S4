@@ -3,11 +3,11 @@
 
 <?php
 
-if (isset($_SESSION['id_dresseur']) && !empty($_SESSION['id_dresseur'])) { // quelqu'un est co
+if (isset($_SESSION['id_user']) && !empty($_SESSION['id_user'])) { // quelqu'un est co
 
     echo "<li><p>Bienvenue " . $_SESSION['login'] . "</p></li>";
     echo '<li><a href="index.php">Home</a></li>';
-    echo '<li><a href="profil.php">Profil</a></li>';
+    echo '<li><a href="profil.php?id=' . $_SESSION['id_user'] . '">Profil</a></li>';
     echo '<li><a href="php/logout.php">Déconnexion</a></li>';
 
 } else { // personne n'est co

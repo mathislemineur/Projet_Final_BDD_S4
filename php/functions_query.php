@@ -135,33 +135,29 @@ function getBase($mysqli, $id) {
 // pour les injections sql ici c'est le paradis mais tkt 
 function checkLogin($mysqli, $nom, $mdp) {
     
-    $sql = "SELECT nom_dresseur, mdp_dresseur, id_dresseur
-            FROM dresseur 
-            WHERE nom_dresseur = '" . $nom . "' AND mdp_dresseur = '" . $mdp . "';";
+    $sql = "SELECT id_user, username, mdp, Role
+            FROM user
+            WHERE username = '" . $nom . "' AND mdp = '" . $mdp . "';";
 
-    // tableau associatif
-    $res = readDB($mysqli, $sql);
-
-    // on retourne le tableau associatif
-    return $res;
+    return readDB($mysqli, $sql);
 }
+
 
 function checkExistance($mysqli, $nom) {
 
-    // on select ce qu'on veut c'est pas giga important faut juste verifier si ca renvoi du vide ou pas
-    $sql = "SELECT id_dresseur
-            FROM dresseur
-            WHERE nom_dresseur = '" . $nom . "';";
+    $sql = "SELECT id_user
+            FROM user
+            WHERE username = '" . $nom . "';";
 
     $res = readDB($mysqli, $sql);
 
-    return !empty($res); // true s'il existe et false sinon
+    return !empty($res);
 }
 
-function insertDresseur($mysqli, $nom, $mdp) {
+function insertUser($mysqli, $nom, $mdp) {
     
-    $sql = "INSERT INTO dresseur (nom_dresseur, mdp_dresseur)
-            VALUES ('" . $nom . "', '" . $mdp . "');";
+    $sql = "INSERT INTO user (username, mdp, Role, date_de_creation)
+            VALUES ('" . $nom . "', '" . $mdp . "', 'membre', CURDATE());";
 
     return writeDB($mysqli, $sql);
 }
