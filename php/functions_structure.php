@@ -593,19 +593,29 @@ function displayArticlesInfos($bdd) {
     $res = $res . '<p> Prix : ' . $infos['prix'] . ' $</p>';
 
     // + le synopsis
-     $res = $res . '<p> ' . $infos['synopsis'] . '</p>';
+    $res = $res . '<p> ' . $infos['synopsis'] . '</p>';
 
     // + le support
 
+    $res = $res . '<p> ' . $infos['support'] . '</p>';
+
     // + categorie
+
+    $res = $res . '<p> ' . $infos['categorie'] . '</p>';
 
     // + la note
     $res = $res . '<p> Note du redacteur : ' . $infos['note'] . '</p>';
 
     // + la note moyenne
 
+    // + un lien vers la page du profil du redacteur en utilisant son id
+    $res = $res . '<a href="profil.php?id=' . $infos['id_user'] . '">';
+
     // + le pseudo du redacteur
     $res = $res . '<p> Rédacteur : ' . $infos['pseudo_redacteur'] . '</p>';
+
+    // balise fermant le lien
+    $res = $res . '</a>';
 
     // basilse css pour les deux dates
     $res = $res . '<div class="article-date">';

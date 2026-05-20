@@ -279,7 +279,7 @@ function getArticles($mysqli) {
 
 function getInfosArticles($mysqli, $id_article) {
 
-    $sql = "SELECT titre, contenu, note, article.date_de_creation AS date_de_creation, date_de_modification, article.id_user AS iduser, jeu.nom AS nom_du_jeu, user.username AS pseudo_redacteur, jeu.prix AS prix, synopsis
+    $sql = "SELECT titre, contenu, note, article.date_de_creation AS date_de_creation, date_de_modification, article.id_user AS id_user, jeu.nom AS nom_du_jeu, user.username AS pseudo_redacteur, jeu.prix AS prix, synopsis, categorie, support
             FROM article 
             JOIN jeu ON jeu.id_jeu = article.id_jeu 
             JOIN user ON article.id_user = user.id_user
