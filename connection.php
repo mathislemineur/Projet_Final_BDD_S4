@@ -34,7 +34,7 @@ $flux = connectionDB();
         <section>
 
             <br>
-            <h1 class='latin-bc'> Bienvenue cher dresseur ! </h1>
+            <h1 class='latin-bc'> Connectez-vous ! </h1>
             <br>
 
             <?php

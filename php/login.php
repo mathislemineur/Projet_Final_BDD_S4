@@ -27,8 +27,9 @@ if (!empty($verif)) {
 
     // echo "L'utilisateur existe !";
 
-    $_SESSION['id_dresseur'] = $verif[0]['id_dresseur'];
-    $_SESSION['login'] = $verif[0]['nom_dresseur'];
+    $_SESSION['id_user'] = $verif[0]['id_user'];
+    $_SESSION['login'] = $verif[0]['username'];
+    $_SESSION['role'] = $verif[0]['Role'];
 
     header("Location: ../index.php");
     exit();
