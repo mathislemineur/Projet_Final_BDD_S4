@@ -1,6 +1,6 @@
 <?php
 
 //constante du site, par exemple :
-$titreSite = "TD4 BDD-IHM";
+$titreSite = "Projet Final - Forum de jeux vidéo";
 
 ?>
