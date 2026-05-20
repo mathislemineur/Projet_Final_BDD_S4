@@ -11,13 +11,19 @@ require_once("./php/functions-DB.php");
 require_once("./php/functions_query.php");
     
 $flux = connectionDB();
-$nb_articles = getNombreArticles($flux);
+$nb_articles = getNombreArticles($flux)[0]['nb_articles'];
 
 if ($id_article > 1) { // il n'y a pas d article avec l'indice 0
     $id_precedent = $id_article - 1; 
 }
 if ($id_article < $nb_articles) { 
     $id_suivant = $id_article + 1; 
+}
+if ($id_article == 1) { //  premier article
+    $id_precedent = null; 
+}
+if ($id_article == $nb_articles) { // dernier article
+    $id_suivant = null; 
 }
 
 // partie bouton du nav

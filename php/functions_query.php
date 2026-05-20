@@ -294,7 +294,8 @@ function getInfosArticles($mysqli, $id_article) {
 
 function getNombreArticles($mysqli) {
 
-    $sql = "SELECT COUNT(*) AS nb_articles FROM article;";
+    $sql = "SELECT COUNT(*) AS nb_articles 
+            FROM article;";
 
     // tableau associatif
     $res = readDB($mysqli, $sql);
