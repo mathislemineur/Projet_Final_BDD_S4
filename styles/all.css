@@ -61,7 +61,6 @@ nav li a:hover {
 /* partie du body */
 
 body {
-    background-image: url("../images/bcb2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
