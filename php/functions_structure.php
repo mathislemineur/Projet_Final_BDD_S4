@@ -590,8 +590,10 @@ function displayArticlesInfos($bdd) {
     $res = $res . '<p> ' . $infos['contenu'] . '</p>';
 
     // + le prix
+    $res = $res . '<p> Prix : ' . $infos['prix'] . ' $</p>';
 
     // + le synopsis
+     $res = $res . '<p> ' . $infos['synopsis'] . '</p>';
 
     // + le support
 

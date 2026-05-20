@@ -279,11 +279,22 @@ function getArticles($mysqli) {
 
 function getInfosArticles($mysqli, $id_article) {
 
-    $sql = "SELECT titre, contenu, note, article.date_de_creation AS date_de_creation, date_de_modification, article.id_user AS iduser, jeu.nom AS nom_du_jeu, user.username AS pseudo_redacteur, jeu.prix AS prix
+    $sql = "SELECT titre, contenu, note, article.date_de_creation AS date_de_creation, date_de_modification, article.id_user AS iduser, jeu.nom AS nom_du_jeu, user.username AS pseudo_redacteur, jeu.prix AS prix, synopsis
             FROM article 
             JOIN jeu ON jeu.id_jeu = article.id_jeu 
             JOIN user ON article.id_user = user.id_user
             WHERE id_article = " .$id_article . ";";
+
+    // tableau associatif
+    $res = readDB($mysqli, $sql);
+
+    // on retourne le tableau associatif
+    return $res;
+}
+
+function getNombreArticles($mysqli) {
+
+    $sql = "SELECT COUNT(*) AS nb_articles FROM article;";
 
     // tableau associatif
     $res = readDB($mysqli, $sql);
