@@ -3,8 +3,8 @@
 session_start();
 
 //Import des fichiers nécessaires
-require_once("./includes/config-bdd.php");      //config base de données
-require_once("./includes/constantes.php");      //constantes du site
+require_once("./includes/config-bdd-pokedex.php");      //config base de données
+require_once("./includes/constantes-pokedex.php");      //constantes du site
 require_once("./php/functions-DB.php");         		//fonctions pour la BDD
 require_once("./php/functions_query.php");				//fonctions pour le pokedex
 require_once("./php/functions_structure.php");			//fonctions pour structurer l'affichage
